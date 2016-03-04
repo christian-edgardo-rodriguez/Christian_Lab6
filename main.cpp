@@ -45,9 +45,23 @@ int main(int argc, char const *argv[]){
 				int posicion=loginGuardar(password,users);
 				int opcionMod=menuModificar();
 				if (opcionMod==1){
-					/* code */
+					cout<<"Ingrese el id del juego: ";
+					cin>>id;
+					for (int i = 0; i < games.size(); ++i){
+						if (games[i].getId()==id){
+							users[posicion].agregarJuego(id);
+							cout<<"El juego ha sido agregado al usuario"<<endl;
+						}
+					}
 				}else if (opcionMod==2){
-					/* code */
+					cout<<"Ingrese el id del juego: ";
+					cin>>id;
+					for (int i = 0; i < games.size(); ++i){
+						if (games[i].getId()==id){
+							users[posicion].eliminarJuego(id);
+							cout<<"El juego ha sido eliminado al usuario"<<endl;
+						}
+					}
 				}else if (opcionMod==3){
 					cout<<"Ingrese la nueva contraseña: ";
 					cin>>newPassword;
@@ -100,17 +114,29 @@ int main(int argc, char const *argv[]){
 			cout<<endl;
 			opcion=menu();
 		}else if (opcion==6){
-			for (int i = 0; i < users.size(); ++i){
-				cout<<users[i].toString()<<endl;
+			if (users.size()>0){
+				for (int i = 0; i < users.size(); ++i){
+					cout<<users[i].toString()<<endl;
+				}
+				cout<<endl;
+				opcion=menu();
+			}else{
+				cout<<"La lista de usuarios esta vacia"<<endl;
+				cout<<endl;
+				opcion=menu();
 			}
-			cout<<endl;
-			opcion=menu();
 		}else if (opcion==7){
-			for (int i = 0; i < games.size(); ++i){
-				cout<<games[i].toString()<<endl;
+			if (games.size()>0){
+				for (int i = 0; i < games.size(); ++i){
+					cout<<games[i].toString()<<endl;
+				}
+				cout<<endl;
+				opcion=menu();
+			}else{
+				cout<<"La lista de juegos esta vacia"<<endl;
+				cout<<endl;
+				opcion=menu();
 			}
-			cout<<endl;
-			opcion=menu();
 		}
 	}while(opcion!=8);
 	return 0;

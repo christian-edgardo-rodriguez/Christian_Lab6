@@ -14,9 +14,9 @@ int Juegos::getId(){
 string Juegos::toString()const{
 	stringstream ss;
 	ss<<"Id: "<<id<<"\n"
-		<<"Nombre"<<nombre<<"\n"
-		<<"Year"<<year<<"\n"
-		<<"Creadores"<<creadores<<"\n"
-		<<"Genero"<<genero<<"\n";
+		<<"Nombre: "<<nombre<<"\n"
+		<<"Year: "<<year<<"\n"
+		<<"Creadores: "<<creadores<<"\n"
+		<<"Genero: "<<genero<<"\n";
 	return ss.str();
 }

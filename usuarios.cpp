@@ -42,6 +42,9 @@ string Usuarios::getPassword(){
 string Usuarios::toString()const{
 	stringstream ss;
 	ss<<"Usuario: "<<user<<"\n"
-		<<"Password"<<password<<"\n";
+		<<"Password: "<<password<<"\n";
+	for (int i = 0; i < juegos.size(); ++i){
+		ss<<juegos[i]<<"\n";
+	}
 	return ss.str();
 }

@@ -15,6 +15,7 @@ class Usuarios{
  	bool eliminarJuego(int id);
  	void setPassword(string password);
  	string getUser();
+ 	string getPassword();
  	bool passwordValida(string user, string password);
  	string toString()const;
 };

@@ -8,6 +8,9 @@ Juegos::Juegos(int id, string nombre, int year, string creadores, string genero)
 id(id), nombre(nombre),year(year), creadores(creadores), genero(genero){
 
 }
+int Juegos::getId(){
+	return id;
+}
 string Juegos::toString()const{
 	stringstream ss;
 	ss<<"Id: "<<id<<"\n"
